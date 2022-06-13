@@ -16,8 +16,45 @@ app.listen(port, function() {
 });
 
 app.post('/soma', function (req, res) {
-    res.send('Response da requisição POST');
     var body = req.body;
-    console.log(body);
-    res.send('via post');
+    var resultado = soma(body.a, body.b);
+    
+    res.send(`O resultado da soma de ${body.a} e ${body.b} é ${resultado}`);
   });
+
+  app.post('/subtracao', function (req, res) {
+    var body = req.body;
+    var resultado = subtracao(body.a, body.b);
+    
+    res.send(`O resultado da subtração de ${body.a} e ${body.b} é ${resultado}`);
+  });
+
+  app.post('/divisao', function (req, res) {
+    var body = req.body;
+    var resultado = divisao(body.a, body.b);
+    
+    res.send(`O resultado da divisão de ${body.a} e ${body.b} é ${resultado}`);
+  });
+
+  app.post('/multiplicacao', function (req, res) {
+    var body = req.body;
+    var resultado = multiplicacao(body.a, body.b);
+    
+    res.send(`O resultado da multiplicação de ${body.a} e ${body.b} é ${resultado}`);
+  });
+
+  function soma(a, b) {
+    return a + b;
+  }
+
+  function subtracao(a, b) {
+    return a - b;
+  }
+
+  function divisao(a, b) {
+    return a / b;
+  }
+
+  function multiplicacao(a, b) {
+    return a * b;
+  }
