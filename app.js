@@ -46,7 +46,7 @@ app.post('/soma', function (req, res) {
   function soma(a, b) {
     return a + b;
   }
-
+sasasa
   function subtracao(a, b) {
     return a - b;
   }
